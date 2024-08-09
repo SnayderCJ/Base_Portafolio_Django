@@ -2,9 +2,9 @@
 
 {% for post in posts %}
     <h2> {{ post.title }} </h2>
-    <h3> {{ post.date }} </h3>
     <p> {{ post.description|striptags|truncatechars:100 }} </p>
+    <p> {{ post.date|date:'M d Y' }} </p>
     <img src="{{ post.image.url }}" alt="{{ post.title }}">
 
-    <a href="{% url 'blog: post_detail' post.id %}"> {{post.title}} </a>
+    <a href="{% url 'blog:post_detail' post.id %}"> Leer Más </a> 
 {% endfor %}
